@@ -1,3 +1,6 @@
+#DISCLAIMER
+This is a blatant copy and edit of `sainnhe/edge`, I just edited some colours to my liking.
+
 <h1 align="center">
 𝐄𝐝𝐠𝐞
 </h1>
