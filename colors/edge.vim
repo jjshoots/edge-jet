@@ -64,19 +64,19 @@ highlight! link iCursor Cursor
 highlight! link lCursor Cursor
 highlight! link CursorIM Cursor
 if &diff
-  call edge#highlight('CursorLine', s:palette.none, s:palette.none, 'underline')
+  " call edge#highlight('CursorLine', s:palette.none, s:palette.none, 'underline')
   call edge#highlight('CursorColumn', s:palette.none, s:palette.none, 'bold')
 else
-  call edge#highlight('CursorLine', s:palette.none, s:palette.diff_green)
+  " call edge#highlight('CursorLine', s:palette.none, s:palette.diff_red)
   call edge#highlight('CursorColumn', s:palette.none, s:palette.diff_yellow)
 endif
 call edge#highlight('LineNr', s:palette.grey, s:palette.none)
 if &diff
-  call edge#highlight('CursorLineNr', s:palette.fg, s:palette.none, 'underline')
+  " call edge#highlight('CursorLineNr', s:palette.fg, s:palette.none, 'underline')
 elseif (&relativenumber == 1 && &cursorline == 0) || s:configuration.sign_column_background !=# 'default'
-  call edge#highlight('CursorLineNr', s:palette.fg, s:palette.none)
+  " call edge#highlight('CursorLineNr', s:palette.fg, s:palette.none)
 else
-  call edge#highlight('CursorLineNr', s:palette.fg, s:palette.diff_yellow)
+  " call edge#highlight('CursorLineNr', s:palette.fg, s:palette.diff_yellow)
 endif
 call edge#highlight('DiffAdd', s:palette.none, s:palette.diff_green)
 call edge#highlight('DiffChange', s:palette.none, s:palette.diff_blue)
@@ -87,7 +87,7 @@ call edge#highlight('ErrorMsg', s:palette.red, s:palette.none, 'bold,underline')
 call edge#highlight('WarningMsg', s:palette.yellow, s:palette.none, 'bold')
 call edge#highlight('ModeMsg', s:palette.fg, s:palette.none, 'bold')
 call edge#highlight('MoreMsg', s:palette.blue, s:palette.none, 'bold')
-call edge#highlight('MatchParen', s:palette.none, s:palette.bg4)
+call edge#highlight('MatchParen', s:palette.none, s:palette.diff_red)
 call edge#highlight('NonText', s:palette.bg4, s:palette.none)
 call edge#highlight('Whitespace', s:palette.bg4, s:palette.none)
 call edge#highlight('SpecialKey', s:palette.bg4, s:palette.none)
@@ -245,15 +245,15 @@ else
   call edge#highlight('PurpleSign', s:palette.purple, s:palette.bg1)
 endif
 if s:configuration.diagnostic_text_highlight
-  call edge#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
+  call edge#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'underline', s:palette.red)
   call edge#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
   call edge#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
-  call edge#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
+  call edge#highlight('HintText', s:palette.none, s:palette.bg2, 'none', s:palette.bg2)
 else
-  call edge#highlight('ErrorText', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
+  call edge#highlight('ErrorText', s:palette.none, s:palette.none, 'underline', s:palette.red)
   call edge#highlight('WarningText', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
   call edge#highlight('InfoText', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
-  call edge#highlight('HintText', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
+  call edge#highlight('HintText', s:palette.none, s:palette.bg2, 'none', s:palette.bg2)
 endif
 if s:configuration.diagnostic_line_highlight
   call edge#highlight('ErrorLine', s:palette.none, s:palette.diff_red)
